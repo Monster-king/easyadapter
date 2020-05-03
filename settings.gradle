@@ -1,0 +1,2 @@
+rootProject.name='Great easy adapter!'
+include ':app'

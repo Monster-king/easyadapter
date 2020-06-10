@@ -11,7 +11,9 @@ import ru.surfstudio.android.easyadapter.EasyAdapter
 
 class MainActivity : AppCompatActivity() {
 
-    private val adapter = EasyAdapter()
+    private val adapter = EasyAdapter().apply {
+        isFirstInvisibleItemEnabled = true
+    }
     private val viewOneController = ViewOneItemController { showMessage(it) }
     private val viewTwoController = ViewTwoItemController()
     private val itemListController = ItemListItemController()

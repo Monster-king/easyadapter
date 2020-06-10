@@ -9,7 +9,7 @@ import ru.surfstudio.android.easyadapter.holder.BindableViewHolder
 
 class SubTwoItemController : BindableItemController<SubTwoType, SubTwoItemController.Holder>() {
 
-    override fun getItemId(data: SubTwoType) = data.id
+    override fun getItemId(data: SubTwoType) = ID_TAG + data.id
 
     override fun createViewHolder(parent: ViewGroup) = Holder(parent)
 
@@ -21,5 +21,9 @@ class SubTwoItemController : BindableItemController<SubTwoType, SubTwoItemContro
         override fun bind(data: SubTwoType) {
             contentTv.text = data.text
         }
+    }
+
+    private companion object {
+        const val ID_TAG = "SubTwoItemController"
     }
 }

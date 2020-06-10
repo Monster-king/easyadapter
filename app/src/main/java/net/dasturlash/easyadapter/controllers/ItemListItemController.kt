@@ -10,7 +10,7 @@ import ru.surfstudio.android.easyadapter.holder.BindableViewHolder
 
 class ItemListItemController : BindableItemController<ItemList, ItemListItemController.Holder>() {
 
-    override fun getItemId(data: ItemList) = data
+    override fun getItemId(data: ItemList) = ID_TAG
 
     override fun createViewHolder(parent: ViewGroup) = Holder(parent)
 
@@ -27,5 +27,9 @@ class ItemListItemController : BindableItemController<ItemList, ItemListItemCont
         override fun bind(data: ItemList) {
             adapter.setItems(data)
         }
+    }
+
+    private companion object {
+        const val ID_TAG = "ItemListItemController"
     }
 }

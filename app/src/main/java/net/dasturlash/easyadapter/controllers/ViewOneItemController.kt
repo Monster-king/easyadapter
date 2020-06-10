@@ -11,7 +11,7 @@ class ViewOneItemController(
     private val onClick: (ViewOneType) -> Unit
 ) : BindableItemController<ViewOneType, ViewOneItemController.Holder>() {
 
-    override fun getItemId(data: ViewOneType) = data.text
+    override fun getItemId(data: ViewOneType) = ID_TAG + data.text
 
     override fun createViewHolder(parent: ViewGroup) = Holder(parent)
 
@@ -29,5 +29,9 @@ class ViewOneItemController(
             this.data = data
             btn.text = data.text
         }
+    }
+
+    private companion object {
+        const val ID_TAG = "ViewOneItemController"
     }
 }

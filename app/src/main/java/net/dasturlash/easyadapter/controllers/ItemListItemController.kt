@@ -17,7 +17,9 @@ class ItemListItemController : BindableItemController<ItemList, ItemListItemCont
     inner class Holder(parent: ViewGroup) :
         BindableViewHolder<ItemList>(parent, R.layout.item_view_3) {
 
-        private val adapter = EasyAdapter()
+        private val adapter = EasyAdapter().apply {
+            isFirstInvisibleItemEnabled = true
+        }
         private val listRv: RecyclerView = itemView.findViewById(R.id.view_3_rv)
 
         init {
